@@ -10,6 +10,11 @@ import UIKit
 
 class HowToPlayViewController: UIViewController {
   
+  @IBAction func backButtonTapped(sender: AnyObject) {
+    self.navigationController?.popViewControllerAnimated(true)
+    self.dismissViewControllerAnimated(true, completion: nil)
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
