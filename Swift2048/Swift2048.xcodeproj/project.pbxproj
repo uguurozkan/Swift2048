@@ -13,6 +13,11 @@
 		E7B721C21A499335002676B9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7B721C11A499335002676B9 /* Images.xcassets */; };
 		E7B721C51A499335002676B9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B721C31A499335002676B9 /* LaunchScreen.xib */; };
 		E7B721D11A499335002676B9 /* Swift2048Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B721D01A499335002676B9 /* Swift2048Tests.swift */; };
+		E7BBAFEC1A49F92000049F08 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBAFEB1A49F92000049F08 /* GameModel.swift */; };
+		E7BBAFF11A4A171400049F08 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBAFF01A4A171400049F08 /* AboutViewController.swift */; };
+		E7BBAFF31A4A172D00049F08 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBAFF21A4A172D00049F08 /* NewGameViewController.swift */; };
+		E7BBAFF51A4A173E00049F08 /* HowToPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBAFF41A4A173E00049F08 /* HowToPlayViewController.swift */; };
+		E7BBAFF71A4A175100049F08 /* HighScoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBAFF61A4A175100049F08 /* HighScoresViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		E7B721CA1A499335002676B9 /* Swift2048Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swift2048Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B721CF1A499335002676B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7B721D01A499335002676B9 /* Swift2048Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift2048Tests.swift; sourceTree = "<group>"; };
+		E7BBAFEB1A49F92000049F08 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		E7BBAFF01A4A171400049F08 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		E7BBAFF21A4A172D00049F08 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
+		E7BBAFF41A4A173E00049F08 /* HowToPlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToPlayViewController.swift; sourceTree = "<group>"; };
+		E7BBAFF61A4A175100049F08 /* HighScoresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoresViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,8 @@
 		E7B721B71A499335002676B9 /* Swift2048 */ = {
 			isa = PBXGroup;
 			children = (
+				E7BBAFEF1A4A16AD00049F08 /* Controller */,
+				E7BBAFEA1A49F8F200049F08 /* Model */,
 				E7B721BA1A499335002676B9 /* AppDelegate.swift */,
 				E7B721BC1A499335002676B9 /* ViewController.swift */,
 				E7B721BE1A499335002676B9 /* Main.storyboard */,
@@ -110,6 +122,25 @@
 				E7B721CF1A499335002676B9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7BBAFEA1A49F8F200049F08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E7BBAFEB1A49F92000049F08 /* GameModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E7BBAFEF1A4A16AD00049F08 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E7BBAFF21A4A172D00049F08 /* NewGameViewController.swift */,
+				E7BBAFF61A4A175100049F08 /* HighScoresViewController.swift */,
+				E7BBAFF41A4A173E00049F08 /* HowToPlayViewController.swift */,
+				E7BBAFF01A4A171400049F08 /* AboutViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +245,11 @@
 			files = (
 				E7B721BD1A499335002676B9 /* ViewController.swift in Sources */,
 				E7B721BB1A499335002676B9 /* AppDelegate.swift in Sources */,
+				E7BBAFF71A4A175100049F08 /* HighScoresViewController.swift in Sources */,
+				E7BBAFF51A4A173E00049F08 /* HowToPlayViewController.swift in Sources */,
+				E7BBAFF31A4A172D00049F08 /* NewGameViewController.swift in Sources */,
+				E7BBAFF11A4A171400049F08 /* AboutViewController.swift in Sources */,
+				E7BBAFEC1A49F92000049F08 /* GameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +441,7 @@
 				E7B721D61A499335002676B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7B721D71A499335002676B9 /* Build configuration list for PBXNativeTarget "Swift2048Tests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +450,7 @@
 				E7B721D91A499335002676B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
