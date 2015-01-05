@@ -547,6 +547,7 @@ Swipe tiles up, down, left, or right.</string>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="02N-AS-iDg" firstAttribute="leading" secondItem="aQl-d7-6F2" secondAttribute="leading" id="0LW-Pf-0P9"/>
                                     <constraint firstItem="0dI-GU-NSE" firstAttribute="leading" secondItem="a8K-rk-Jru" secondAttribute="leading" id="0js-XT-GSw"/>
@@ -583,6 +584,12 @@ Swipe tiles up, down, left, or right.</string>
                                     <constraint firstItem="WQg-bg-cSJ" firstAttribute="leading" secondItem="Jon-un-MEz" secondAttribute="leading" id="udi-oF-Pqs"/>
                                     <constraint firstItem="a8K-rk-Jru" firstAttribute="top" secondItem="0dI-GU-NSE" secondAttribute="bottom" constant="8" symbolic="YES" id="viL-jz-bBl"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JEZ-Gk-1oX" appends="YES" id="YS8-jT-Bdk"/>
+                                    <outletCollection property="gestureRecognizers" destination="Fxj-gT-e4e" appends="YES" id="KLq-VN-nKz"/>
+                                    <outletCollection property="gestureRecognizers" destination="iiy-nY-OVP" appends="YES" id="efp-ZL-oLs"/>
+                                    <outletCollection property="gestureRecognizers" destination="Gcx-Ba-KZW" appends="YES" id="b87-6g-1cU"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSK-ti-kUU">
                                 <rect key="frame" x="131" y="366" width="59" height="30"/>
@@ -610,8 +617,50 @@ Swipe tiles up, down, left, or right.</string>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="swipeDownRecognizer" destination="iiy-nY-OVP" id="tIi-4e-GUW"/>
+                        <outlet property="swipeLeftRecognizer" destination="Fxj-gT-e4e" id="RMs-BM-tpN"/>
+                        <outlet property="swipeRightRecognizer" destination="JEZ-Gk-1oX" id="82U-Ta-qAA"/>
+                        <outlet property="swipeUpRecognizer" destination="Gcx-Ba-KZW" id="RLl-Di-uiZ"/>
+                        <outletCollection property="tiles" destination="tEN-Zm-wgY" collectionClass="NSMutableArray" id="lzb-Rh-aeK"/>
+                        <outletCollection property="tiles" destination="we3-vP-Sax" collectionClass="NSMutableArray" id="NgB-90-8b0"/>
+                        <outletCollection property="tiles" destination="aQl-d7-6F2" collectionClass="NSMutableArray" id="6aw-38-9un"/>
+                        <outletCollection property="tiles" destination="Tvp-iy-KoO" collectionClass="NSMutableArray" id="CrB-Io-Vcy"/>
+                        <outletCollection property="tiles" destination="Jon-un-MEz" collectionClass="NSMutableArray" id="Ytw-mS-a8r"/>
+                        <outletCollection property="tiles" destination="EgI-3H-sEf" collectionClass="NSMutableArray" id="0SR-3W-J2V"/>
+                        <outletCollection property="tiles" destination="8Pr-FI-m3N" collectionClass="NSMutableArray" id="G3Q-q1-MDL"/>
+                        <outletCollection property="tiles" destination="gzY-o2-ULZ" collectionClass="NSMutableArray" id="ruB-Gu-P0L"/>
+                        <outletCollection property="tiles" destination="JmX-Xe-5tc" collectionClass="NSMutableArray" id="9RA-RP-Lk4"/>
+                        <outletCollection property="tiles" destination="HYm-LW-x8y" collectionClass="NSMutableArray" id="gmH-Om-5ZM"/>
+                        <outletCollection property="tiles" destination="0dI-GU-NSE" collectionClass="NSMutableArray" id="Bbe-jF-h0p"/>
+                        <outletCollection property="tiles" destination="4j9-BQ-wmT" collectionClass="NSMutableArray" id="2jz-Yi-lb4"/>
+                        <outletCollection property="tiles" destination="WIw-IO-QgI" collectionClass="NSMutableArray" id="J1P-RN-aft"/>
+                        <outletCollection property="tiles" destination="02N-AS-iDg" collectionClass="NSMutableArray" id="idK-hG-2Ou"/>
+                        <outletCollection property="tiles" destination="a8K-rk-Jru" collectionClass="NSMutableArray" id="ZwR-oo-c9D"/>
+                        <outletCollection property="tiles" destination="WQg-bg-cSJ" collectionClass="NSMutableArray" id="IwG-zd-8x5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikH-Iz-W3w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="JEZ-Gk-1oX">
+                    <connections>
+                        <action selector="swipedRight:" destination="Pm8-RN-K6B" id="0h8-YE-Pmn"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="Fxj-gT-e4e">
+                    <connections>
+                        <action selector="swipedLeft:" destination="Pm8-RN-K6B" id="RM5-OF-IvV"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="iiy-nY-OVP">
+                    <connections>
+                        <action selector="swipedDown:" destination="Pm8-RN-K6B" id="SxB-aT-xc7"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="Gcx-Ba-KZW">
+                    <connections>
+                        <action selector="swipedUp:" destination="Pm8-RN-K6B" id="MMG-i3-X9V"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="203" y="-494"/>
         </scene>

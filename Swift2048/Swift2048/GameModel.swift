@@ -218,8 +218,4 @@ class GameModel {
     }
   }
   
-
-  
-  
-  
 }
