@@ -43,6 +43,8 @@ class GameModel {
   let maxValue: Int
   var gameState = GameState.InProgress
   var board: [[TileObject]]
+  var replayQueueMoves = [Direction]()
+  var replayQueueRandoms = [TileObject]()
   // TODO implement score mechanism later.
   
   
@@ -56,6 +58,8 @@ class GameModel {
   }
   
   func move(direction: Direction){
+    replayQueueMoves.append(direction)
+    
     switch (direction) {
     case .Left:
       for var row = 0; row < board.count; row++ {
@@ -268,7 +272,10 @@ class GameModel {
       row = Int(arc4random_uniform(4))
       col = Int(arc4random_uniform(4))
     } while(!isAvailable(row, col: col))
-    board[row][col] = TileObject.Tile(value: 2, isMerged: false)
+    var newTile = TileObject.Tile(value: 2, isMerged: false)
+    board[row][col] = newTile
+    
+    replayQueueRandoms.append(newTile)
   }
   
   func isAvailable(row: Int, col: Int) -> Bool{
@@ -276,22 +283,19 @@ class GameModel {
   }
   
   func isBoardFull() -> Bool {
-    return getEmptySpots().count == 0
-  }
-  
-  func getEmptySpots() -> [(Int, Int)] {
-    var emptySpots = Array<(Int, Int)>()
+    var emptySpots = 0
     for var row = 0; row < board.count; row++ {
       for var col = 0; col < board[row].count; col++ {
         switch board[row][col] {
         case .Empty:
-          emptySpots += [(row, col)]
+          emptySpots += 1
         case .Tile:
           break
         }
       }
     }
-    return emptySpots
+    
+    return emptySpots == 0
   }
   
   func getGameState() -> GameState {
@@ -331,7 +335,7 @@ class GameModel {
         case .Empty:
           continue
         case let .Tile(value,_):
-          if isTileBelowHasSameValue((row, col), value) || isTileToRightHasSameValue((row, col), value) {
+          if isBelowSame((row, col), value) || isRightSame((row, col), value) {
             return false
           }
         }
@@ -340,8 +344,8 @@ class GameModel {
     return true
   }
   
-  func isTileBelowHasSameValue(loc: (Int, Int), _ value: Int) -> Bool {
-    let (row, col) = loc
+  func isBelowSame(tileCoordinate: (Int, Int), _ value: Int) -> Bool {
+    let (row, col) = tileCoordinate
     if row == dimension - 1 {
       return false
     }
@@ -354,8 +358,8 @@ class GameModel {
     }
   }
   
-  func isTileToRightHasSameValue(loc: (Int, Int), _ value: Int) -> Bool {
-    let (row, col) = loc
+  func isRightSame(tileCoordinate: (Int, Int), _ value: Int) -> Bool {
+    let (row, col) = tileCoordinate
     if col == dimension - 1 {
       return false
     }
@@ -367,6 +371,5 @@ class GameModel {
       return v == value
     }
   }
-
 
 }

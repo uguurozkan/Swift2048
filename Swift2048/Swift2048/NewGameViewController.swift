@@ -48,6 +48,10 @@ class NewGameViewController: UIViewController {
     }
     
     gameModel.refresh()
+    updateTileTitles()
+  }
+  
+  func updateTileTitles() {
     for tile in tiles{
       let row = tile.tag / 4
       let col = tile.tag % 4
@@ -59,7 +63,6 @@ class NewGameViewController: UIViewController {
         tile.setTitle(state.getValue().description, forState: .Normal)
       }
     }
-    
   }
   
   func showPopUp() {
@@ -73,8 +76,6 @@ class NewGameViewController: UIViewController {
     alert.show()
   }
 
-  
-  
   @IBAction func swipedRight(sender: AnyObject) {
       gameModel.move(Direction.Right)
       refreshUI()
