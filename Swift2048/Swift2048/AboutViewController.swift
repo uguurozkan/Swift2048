@@ -1,5 +1,5 @@
 //
-//  NewGameViewController.swift
+//  AboutViewController.swift
 //  Swift2048
 //
 //  Created by Ugur Ozkan on 23/12/14.

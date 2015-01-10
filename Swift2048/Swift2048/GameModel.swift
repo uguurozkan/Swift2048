@@ -34,8 +34,17 @@ enum GameState {
   case InProgress, UserHasWon, UserHasLost
 }
 
-enum Direction {
+enum Direction{
   case Up, Right, Down, Left
+  
+  func getDirectionValues() -> (Int, Int) {
+    switch self {
+    case .Up: return (-1, 0)
+    case .Right: return (0, 1)
+    case .Down: return (1, 0)
+    case .Left: return (0, -1)
+    }
+  }
 }
 
 class GameModel {
@@ -266,6 +275,15 @@ class GameModel {
   }
   
   func addRandomTile() {
+    let (row, col) = getRandomCoordinates()
+    
+    var newTile = TileObject.Tile(value: getRandomValue(), isMerged: false)
+    insertTile(row, col, newTile)
+    
+    replayQueueRandoms.append((row, col, newTile))
+  }
+  
+  func getRandomCoordinates() -> (Int, Int) {
     var row: Int
     var col: Int
     do {
@@ -273,41 +291,23 @@ class GameModel {
       col = Int(arc4random_uniform(4))
     } while(!isAvailable(row, col: col))
     
-    var value: Int
-    if Int(arc4random_uniform(100)) < 30 {
-      value = 4
-    } else {
-      value = 2
-    }
-    
-    var newTile = TileObject.Tile(value: value, isMerged: false)
-    insertTile(row, col, newTile)
-    
-    replayQueueRandoms.append((row, col, newTile))
-  }
-  
-  func insertTile(row: Int, _ col: Int, _ newTile: TileObject) {
-    board[row][col] = newTile
+    return (row, col)
   }
   
   func isAvailable(row: Int, col: Int) -> Bool{
     return board[row][col].getValue() == 0
   }
   
-  func isBoardFull() -> Bool {
-    var emptySpots = 0
-    for var row = 0; row < board.count; row++ {
-      for var col = 0; col < board[row].count; col++ {
-        switch board[row][col] {
-        case .Empty:
-          emptySpots += 1
-        case .Tile:
-          break
-        }
-      }
+  func getRandomValue() -> Int {
+    if Int(arc4random_uniform(100)) < 20 {
+      return 4
+    } else {
+      return 2
     }
-    
-    return emptySpots == 0
+  }
+  
+  func insertTile(row: Int, _ col: Int, _ newTile: TileObject) {
+    board[row][col] = newTile
   }
   
   func getGameState() -> GameState {
@@ -354,6 +354,22 @@ class GameModel {
       }
     }
     return true
+  }
+  
+  func isBoardFull() -> Bool {
+    var emptySpots = 0
+    for var row = 0; row < board.count; row++ {
+      for var col = 0; col < board[row].count; col++ {
+        switch board[row][col] {
+        case .Empty:
+          emptySpots += 1
+        case .Tile:
+          break
+        }
+      }
+    }
+    
+    return emptySpots == 0
   }
   
   func isBelowSame(tileCoordinate: (Int, Int), _ value: Int) -> Bool {

@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOW-ym-39m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-772" y="133"/>
+            <point key="canvasLocation" x="-388" y="132"/>
         </scene>
         <!--How to Play-->
         <scene sceneID="4cB-yP-Vm2">
@@ -213,7 +213,7 @@ Swipe tiles up, down, left, or right.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fC9-Da-aRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-388" y="133"/>
+            <point key="canvasLocation" x="-40" y="132"/>
         </scene>
         <!--High Scores-->
         <scene sceneID="pdn-vC-evP">
@@ -299,7 +299,7 @@ Swipe tiles up, down, left, or right.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QDs-sm-dvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="133"/>
+            <point key="canvasLocation" x="-736" y="132"/>
         </scene>
         <!--Replay-->
         <scene sceneID="VOk-hj-Vks">
@@ -376,7 +376,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="G8A-DN-JEu"/>
                                             <constraint firstAttribute="height" constant="50" id="qDb-VP-gj6"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -387,7 +389,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="hD5-v2-HtO"/>
                                             <constraint firstAttribute="height" constant="50" id="izH-Cb-mBS"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -398,7 +402,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="Mdl-Qs-VWy"/>
                                             <constraint firstAttribute="height" constant="50" id="PKP-5h-1Xb"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -409,7 +415,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="QRi-cE-9v1"/>
                                             <constraint firstAttribute="width" constant="50" id="aqQ-Qg-Maf"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -420,7 +428,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="3u2-WG-Qhx"/>
                                             <constraint firstAttribute="width" constant="50" id="U8y-ub-SpS"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -431,7 +441,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="Ao1-lR-Mnj"/>
                                             <constraint firstAttribute="height" constant="50" id="QPo-vY-bFN"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -442,7 +454,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="AFt-cQ-x6N"/>
                                             <constraint firstAttribute="width" constant="50" id="pwj-y9-xPM"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -453,7 +467,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="THS-Ff-FDS"/>
                                             <constraint firstAttribute="height" constant="50" id="fYs-AE-c2Q"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -464,7 +480,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="r8E-ph-DlN"/>
                                             <constraint firstAttribute="height" constant="50" id="wFE-dk-Rrt"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -475,7 +493,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="VIt-QP-bn6"/>
                                             <constraint firstAttribute="height" constant="50" id="XfQ-xU-ku7"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -486,7 +506,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="Npz-iA-xEZ"/>
                                             <constraint firstAttribute="width" constant="50" id="VWm-sS-Zj4"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -497,7 +519,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="17W-jE-aVu"/>
                                             <constraint firstAttribute="width" constant="50" id="7hz-xa-LqI"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -508,7 +532,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="CYk-BZ-UUw"/>
                                             <constraint firstAttribute="height" constant="50" id="D3V-NL-wuE"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -519,7 +545,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="SW2-Vi-sOs"/>
                                             <constraint firstAttribute="width" constant="50" id="Xaj-Zb-CIo"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -530,7 +558,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="Lp7-eK-6QP"/>
                                             <constraint firstAttribute="height" constant="50" id="QJw-l3-CGV"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -541,7 +571,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="1Xr-kQ-uIY"/>
                                             <constraint firstAttribute="width" constant="50" id="rcg-7e-RMy"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -624,6 +656,7 @@ Swipe tiles up, down, left, or right.</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="movesLabel" destination="5Ia-Cq-wK8" id="zg4-Xj-hl0"/>
+                        <outlet property="scoreLabel" destination="rRO-lc-4wX" id="ZWV-Zr-AnQ"/>
                         <outlet property="stepButton" destination="uMF-kt-t2y" id="UfX-bS-oUd"/>
                         <outletCollection property="tiles" destination="2le-RS-Ew2" collectionClass="NSMutableArray" id="ghf-ER-8LT"/>
                         <outletCollection property="tiles" destination="j72-UK-wpx" collectionClass="NSMutableArray" id="tda-KV-6ku"/>
@@ -645,7 +678,7 @@ Swipe tiles up, down, left, or right.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ww7-IR-5JN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="682" y="-494"/>
+            <point key="canvasLocation" x="498" y="-494"/>
         </scene>
         <!--New Game-->
         <scene sceneID="jHM-cX-CEJ">
@@ -722,7 +755,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="d7K-qk-Ota"/>
                                             <constraint firstAttribute="height" constant="50" id="gGd-xu-VXv"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -733,7 +768,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="ZnS-d4-Qlh"/>
                                             <constraint firstAttribute="width" constant="50" id="nzK-cN-h56"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -744,7 +781,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="8kI-l8-C8s"/>
                                             <constraint firstAttribute="width" constant="50" id="ADW-Fl-gTh"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -755,7 +794,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="A3u-0c-hL8"/>
                                             <constraint firstAttribute="height" constant="50" id="H4V-a4-2aa"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -766,7 +807,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="8C1-kg-zyI"/>
                                             <constraint firstAttribute="width" constant="50" id="pS3-C3-gx4"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -777,7 +820,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="37s-1m-HVw"/>
                                             <constraint firstAttribute="width" constant="50" id="pYG-jc-4Fc"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -788,7 +833,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="86o-ED-KCB"/>
                                             <constraint firstAttribute="height" constant="50" id="sjM-Tq-iE9"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -799,7 +846,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="8pw-Kn-3r0"/>
                                             <constraint firstAttribute="width" constant="50" id="Qr3-IN-7bq"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -810,7 +859,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="Ako-EO-liT"/>
                                             <constraint firstAttribute="height" constant="50" id="mfY-PG-S6K"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -821,7 +872,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="Ugj-Y7-nLH"/>
                                             <constraint firstAttribute="width" constant="50" id="WDU-sy-UrI"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -832,7 +885,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="kNE-ik-hC9"/>
                                             <constraint firstAttribute="width" constant="50" id="koI-2R-Dta"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -843,7 +898,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="4WL-qN-mim"/>
                                             <constraint firstAttribute="height" constant="50" id="nzt-Sm-oXr"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -854,7 +911,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="7w1-aI-hlF"/>
                                             <constraint firstAttribute="height" constant="50" id="dUr-WH-uja"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -865,7 +924,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="Ibh-rJ-Zmj"/>
                                             <constraint firstAttribute="width" constant="50" id="zE0-kO-XuS"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -876,7 +937,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="width" constant="50" id="XxZ-P7-1HT"/>
                                             <constraint firstAttribute="height" constant="50" id="gPL-pt-Tmc"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -887,7 +950,9 @@ Swipe tiles up, down, left, or right.</string>
                                             <constraint firstAttribute="height" constant="50" id="Rdc-gC-j7c"/>
                                             <constraint firstAttribute="width" constant="50" id="kWJ-j7-Onu"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="32768">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -1022,7 +1087,7 @@ Swipe tiles up, down, left, or right.</string>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="185" y="-494"/>
+            <point key="canvasLocation" x="63" y="-494"/>
         </scene>
     </scenes>
 </document>
