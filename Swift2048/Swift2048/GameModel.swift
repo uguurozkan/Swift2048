@@ -54,6 +54,7 @@ class GameModel {
   var board: [[TileObject]]
   var replayQueueMoves = [Direction]()
   var replayQueueRandoms = [(Int, Int, TileObject)]()
+  var isMoved = false
   
   init(maxValue: Int, isReplay: Bool) {
     self.maxValue = maxValue
@@ -67,98 +68,74 @@ class GameModel {
   }
   
   func move(direction: Direction){
-    replayQueueMoves.append(direction)
+    isMoved = false
     
     switch (direction) {
     case .Left:
-      for var row = 0; row < board.count; row++ {
-        for var col = 0; col < board[row].count; col++ {
-          var tileValue = board[row][col].getValue()
-          
-          if tileValue != 0 {
-            moveLeft(row, col, value: tileValue)
-          }
-        }
-      }
+      moveForward(.Left)
       break
     case .Up:
-      for var row = 0; row < board.count; row++ {
-        for var col = 0; col < board[row].count; col++ {
-          var tileValue = board[row][col].getValue()
-          
-          if tileValue != 0 {
-            moveUp(row, col, value: tileValue)
-          }
-        }
-      }
+      moveForward(.Up)
       break
     case .Right:
-      for var row = board.count - 1; row >= 0; row-- {
-        for var col = board[row].count - 1; col >= 0; col-- {
-          var tileValue = board[row][col].getValue()
-          
-          if tileValue != 0 {
-            moveRight(row, col, value: tileValue)
-          }
-        }
-      }
+      moveBackward(.Right)
       break
     case .Down:
-      for var row = board.count - 1; row >= 0; row-- {
-        for var col = board[row].count - 1; col >= 0; col-- {
-          var tileValue = board[row][col].getValue()
-          
-          if tileValue != 0 {
-            moveDown(row, col, value: tileValue)
-          }
-        }
-      }
+      moveBackward(.Down)
       break
     }
+    
+    if hasMovement() {
+      replayQueueMoves.append(direction)
+    }
   }
   
-  func moveDown(sRow: Int, _ sCol: Int, value: Int){
+  func hasMovement() -> Bool {
+    return isMoved
+  }
+ 
+  func moveForward(direction: Direction){
+    for var row = 0; row <= dimension - 1; row++ {
+      for var col = 0; col <= dimension - 1; col++ {
+        var tileValue = board[row][col].getValue()
+        
+        if tileValue != 0 {
+          moveByDirection(row, col, direction, value: tileValue)
+        }
+      }
+    }
+  }
+  
+  func moveBackward(direction: Direction){
+    for var row = dimension - 1; row >= 0; row-- {
+      for var col = dimension - 1; col >= 0; col-- {
+        var tileValue = board[row][col].getValue()
+        
+        if tileValue != 0 {
+          moveByDirection(row, col, direction, value: tileValue)
+        }
+      }
+    }
+  }
+  
+  func moveByDirection(sRow: Int, _ sCol: Int, _ direction: Direction, value: Int) -> Bool{
+    let (x, y) = direction.getDirectionValues()
     var row = sRow
     var col = sCol
     
-    while isInBounds(row + 1, col) {
+    while isInBounds(row + x, col + y) {
       var currentTile = board[row][col]
-      var targetTile = board[row + 1][col]
+      var targetTile = board[row + x][col + y]
       
-      var action = determineAction(currentTile, targetTile: targetTile)
+      var action = determineAction(currentTile, targetTile)
       switch (action) {
       case TileAction.Merge:
-        propagate((row, col), to: (row + 1, col), value: value, merge: true)
+        propagate((row, col), to: (row + x, col + y), value: value, merge: true)
+        isMoved = true
         break
       case TileAction.Move:
-        propagate((row, col), to: (row + 1, col), value: value, merge: false)
-        break
-      case TileAction.NoAction:
-        break
-      }
-     
-      if action == TileAction.NoAction {
-        break
-      }
-      row = row + 1
-    }
-  }
-  
-  func moveRight(sRow: Int, _ sCol: Int, value: Int){
-    var row = sRow
-    var col = sCol
-
-    while isInBounds(row, col + 1) {
-      var currentTile = board[row][col]
-      var targetTile = board[row][col + 1]
-      
-      var action = determineAction(currentTile, targetTile: targetTile)
-      switch (action) {
-      case TileAction.Merge:
-        propagate((row, col), to: (row, col + 1), value: value, merge: true)
-        break
-      case TileAction.Move:
-        propagate((row, col), to: (row, col + 1), value: value, merge: false)
+        propagate((row, col), to: (row + x, col + y), value: value, merge: false)
+        isMoved = true
         break
       case TileAction.NoAction:
         break
@@ -168,77 +145,22 @@ class GameModel {
         break
       }
       
-      col = col + 1
+      row = row + x
+      col = col + y
     }
-  }
-  
-  func moveUp(sRow: Int, _ sCol: Int, value: Int){
-    var row = sRow
-    var col = sCol
     
-    while isInBounds(row - 1, col) {
-      var currentTile = board[row][col]
-      var targetTile = board[row - 1][col]
-      
-      var action = determineAction(currentTile, targetTile: targetTile)
-      switch (action) {
-      case TileAction.Merge:
-        propagate((row, col), to: (row - 1, col), value: value, merge: true)
-        break
-      case TileAction.Move:
-        propagate((row, col), to: (row - 1, col), value: value, merge: false)
-        break
-      case TileAction.NoAction:
-        break
-      }
-      
-      if action == TileAction.NoAction {
-        break
-      }
-      
-      row = row - 1
-      
-    }
-  }
-  
-  func moveLeft(sRow: Int, _ sCol: Int, value: Int){
-    var row = sRow
-    var col = sCol
-    
-    while isInBounds(row, col - 1) {
-      var currentTile = board[row][col]
-      var targetTile = board[row][col - 1]
-      
-      var action = determineAction(currentTile, targetTile: targetTile)
-      switch (action) {
-      case TileAction.Merge:
-        propagate((row, col), to: (row, col - 1), value: value, merge: true)
-        break
-      case TileAction.Move:
-        propagate((row, col), to: (row, col - 1), value: value, merge: false)
-        break
-      case TileAction.NoAction:
-        break
-      }
-      
-      if action == TileAction.NoAction {
-        break
-      }
-      
-      col = col - 1
-      
-    }
+    return isMoved
   }
   
   func isInBounds (row: Int, _ col: Int) -> Bool {
-    if row >= 0 && row < board.count && col >= 0 && col < board.count {
+    if row >= 0 && row < dimension && col >= 0 && col < dimension {
       return true
     } else {
       return false
     }
   }
   
-  func determineAction(currentTile: TileObject, targetTile: TileObject) -> TileAction {
+  func determineAction(currentTile: TileObject, _ targetTile: TileObject) -> TileAction {
     if targetTile.getValue() == currentTile.getValue() && targetTile.getMergeCondition() == false && currentTile.getMergeCondition() == false{
       return TileAction.Merge
     }
@@ -263,8 +185,8 @@ class GameModel {
   }
   
   func refresh() {
-    for var row = 0; row < board.count; row++ {
-      for var col = 0; col < board[row].count; col++ {
+    for var row = 0; row < dimension; row++ {
+      for var col = 0; col < dimension; col++ {
         var tileValue = board[row][col].getValue()
         if tileValue != 0 {
           board[row][col] = TileObject.Tile(value: tileValue, isMerged: false)
@@ -273,14 +195,13 @@ class GameModel {
     }
   }
   
-  func addRandomTile() -> (Int, Int){
+  func addRandomTile(){
     let (row, col) = getRandomCoordinates()
     
     var newTile = TileObject.Tile(value: getRandomValue(), isMerged: false)
     insertTile(row, col, newTile)
     
     replayQueueRandoms.append((row, col, newTile))
-    return (row, col)
   }
   
   func getRandomCoordinates() -> (Int, Int) {
@@ -321,8 +242,8 @@ class GameModel {
   }
   
   func hasUserWon() -> Bool {
-    for var row = 0; row < board.count; row++ {
-      for var col = 0; col < board[row].count; col++ {
+    for var row = 0; row < dimension; row++ {
+      for var col = 0; col < dimension; col++ {
         switch board[row][col] {
         case .Empty:
           break
@@ -341,8 +262,8 @@ class GameModel {
       return false
     }
     
-    for var row = 0; row < board.count; row++ {
-      for var col = 0; col < board[row].count; col++ {
+    for var row = 0; row < dimension; row++ {
+      for var col = 0; col < dimension; col++ {
         switch board[row][col] {
         case .Empty:
           continue
@@ -358,8 +279,8 @@ class GameModel {
   
   func isBoardFull() -> Bool {
     var emptySpots = 0
-    for var row = 0; row < board.count; row++ {
-      for var col = 0; col < board[row].count; col++ {
+    for var row = 0; row < dimension; row++ {
+      for var col = 0; col < dimension; col++ {
         switch board[row][col] {
         case .Empty:
           emptySpots += 1
@@ -403,8 +324,8 @@ class GameModel {
   // TODO Change logic
   func getScore() -> Int {
     var score = 0
-    for var row = 0; row < board.count; row++ {
-      for var col = 0; col < board[row].count; col++ {
+    for var row = 0; row < dimension; row++ {
+      for var col = 0; col < dimension; col++ {
         score += board[row][col].getValue()
       }
     }

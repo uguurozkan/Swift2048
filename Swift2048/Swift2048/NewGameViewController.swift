@@ -11,6 +11,7 @@ import UIKit
 class NewGameViewController: UIViewController {
   
   var gameModel = GameModel(maxValue: 2048, isReplay: false)
+  var scores: [Int]!
   
   func refreshUI() {
     if !gameModel.isBoardFull() {
@@ -23,11 +24,12 @@ class NewGameViewController: UIViewController {
       swipeDownRecognizer.enabled = false
       swipeUpRecognizer.enabled = false
       showPopUp()
+      saveScore()
     }
     
     gameModel.refresh()
     updateTiles()
-    //updateTime()
+    
     movesLabel.text = gameModel.replayQueueMoves.count.description
     scoreLabel.text = gameModel.getScore().description
   }
@@ -85,6 +87,12 @@ class NewGameViewController: UIViewController {
     alert.show()
   }
   
+  func saveScore() {
+    scores.append(gameModel.getScore())
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    userDefaults.setObject(scores, forKey: "scores")    
+  }
+  
   var count = 0
   func updateTime() {
     count++
@@ -108,23 +116,31 @@ class NewGameViewController: UIViewController {
   }
 
   @IBAction func swipedRight(sender: AnyObject) {
-      gameModel.move(Direction.Right)
+    gameModel.move(Direction.Right)
+    if gameModel.hasMovement() {
       refreshUI()
+    }
   }
 
   @IBAction func swipedLeft(sender: AnyObject) {
-      gameModel.move(Direction.Left)
+    gameModel.move(Direction.Left)
+    if gameModel.hasMovement() {
       refreshUI()
+    }
   }
 
   @IBAction func swipedDown(sender: AnyObject) {
-      gameModel.move(Direction.Down)
+    gameModel.move(Direction.Down)
+    if gameModel.hasMovement() {
       refreshUI()
+    }
   }
   
   @IBAction func swipedUp(sender: AnyObject) {
-      gameModel.move(Direction.Up)
+    gameModel.move(Direction.Up)
+    if gameModel.hasMovement() {
       refreshUI()
+    }
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -136,7 +152,16 @@ class NewGameViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     refreshUI()
-     var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+    var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+    
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    if let defaultScores = userDefaults.arrayForKey("scores") {
+      scores = (defaultScores as [Int])
+      scores.sort { $1 < $0 }
+    } else {
+      scores = [Int]()
+      userDefaults.setObject(scores, forKey: "scores")
+    }
   }
   
   override func didReceiveMemoryWarning() {
