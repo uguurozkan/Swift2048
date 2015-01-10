@@ -27,12 +27,13 @@ class NewGameViewController: UIViewController {
     
     gameModel.refresh()
     updateTiles()
+    //updateTime()
     movesLabel.text = gameModel.replayQueueMoves.count.description
     scoreLabel.text = gameModel.getScore().description
   }
   
   func updateTiles() {
-    for tile in tiles{
+    for tile in tiles {
       let row = tile.tag / gameModel.dimension
       let col = tile.tag % gameModel.dimension
       let state = gameModel.board[row][col]
@@ -84,6 +85,12 @@ class NewGameViewController: UIViewController {
     alert.show()
   }
   
+  var count = 0
+  func updateTime() {
+    count++
+    timeLabel.text = String(count)
+  }
+  
   @IBOutlet weak var timeLabel: UILabel!
   @IBOutlet weak var movesLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
@@ -127,8 +134,9 @@ class NewGameViewController: UIViewController {
   }
   
   override func viewDidLoad() {
-    refreshUI()
     super.viewDidLoad()
+    refreshUI()
+     var timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
   }
   
   override func didReceiveMemoryWarning() {

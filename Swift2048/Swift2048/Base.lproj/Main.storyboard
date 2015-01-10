@@ -304,7 +304,7 @@ Swipe tiles up, down, left, or right.</string>
         <!--Replay-->
         <scene sceneID="VOk-hj-Vks">
             <objects>
-                <viewController title="Replay" id="vQZ-Ku-fWn" userLabel="Replay" customClass="ReplayViewController" customModule="Swift2048" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Replay" modalTransitionStyle="flipHorizontal" id="vQZ-Ku-fWn" userLabel="Replay" customClass="ReplayViewController" customModule="Swift2048" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rf8-lM-Mxf"/>
                         <viewControllerLayoutGuide type="bottom" id="BtH-FP-zF3"/>
@@ -683,7 +683,7 @@ Swipe tiles up, down, left, or right.</string>
         <!--New Game-->
         <scene sceneID="jHM-cX-CEJ">
             <objects>
-                <viewController title="New Game" id="Pm8-RN-K6B" customClass="NewGameViewController" customModule="Swift2048" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Game" modalTransitionStyle="partialCurl" id="Pm8-RN-K6B" customClass="NewGameViewController" customModule="Swift2048" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lQj-fV-KfZ"/>
                         <viewControllerLayoutGuide type="bottom" id="RtW-m5-8a5"/>
@@ -723,7 +723,7 @@ Swipe tiles up, down, left, or right.</string>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="25825850" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnL-jC-fj7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnL-jC-fj7">
                                         <rect key="frame" x="11" y="23" width="68" height="21"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>

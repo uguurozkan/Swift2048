@@ -254,12 +254,11 @@ class GameModel {
     let (fromRow, fromCol) = from
     let (toRow, toCol) = to
 
+    insertTile(fromRow, fromCol, TileObject.Empty)
     if merge {
-      board[fromRow][fromCol] = TileObject.Empty
-      board[toRow][toCol] = TileObject.Tile(value: value * 2, isMerged: true)
+      insertTile(toRow, toCol, TileObject.Tile(value: value * 2, isMerged: true))
     } else {
-      board[fromRow][fromCol] = TileObject.Empty
-      board[toRow][toCol] = TileObject.Tile(value: value, isMerged: false)
+      insertTile(toRow, toCol, TileObject.Tile(value: value, isMerged: false))
     }
   }
   
@@ -274,13 +273,14 @@ class GameModel {
     }
   }
   
-  func addRandomTile() {
+  func addRandomTile() -> (Int, Int){
     let (row, col) = getRandomCoordinates()
     
     var newTile = TileObject.Tile(value: getRandomValue(), isMerged: false)
     insertTile(row, col, newTile)
     
     replayQueueRandoms.append((row, col, newTile))
+    return (row, col)
   }
   
   func getRandomCoordinates() -> (Int, Int) {
