@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E71276901A6073BF00371CE5 /* ReplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E712768F1A6073BF00371CE5 /* ReplayViewController.swift */; };
 		E719A65E1A4B1F7F00B4C935 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E719A65D1A4B1F7F00B4C935 /* MenuViewController.swift */; };
 		E7B721BB1A499335002676B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B721BA1A499335002676B9 /* AppDelegate.swift */; };
 		E7B721C01A499335002676B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7B721BE1A499335002676B9 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E712768F1A6073BF00371CE5 /* ReplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplayViewController.swift; sourceTree = "<group>"; };
 		E719A65D1A4B1F7F00B4C935 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		E7B721B51A499335002676B9 /* Swift2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B721B91A499335002676B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				E7BBAFF61A4A175100049F08 /* HighScoresViewController.swift */,
 				E7BBAFF41A4A173E00049F08 /* HowToPlayViewController.swift */,
 				E7BBAFF01A4A171400049F08 /* AboutViewController.swift */,
+				E712768F1A6073BF00371CE5 /* ReplayViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7B721BB1A499335002676B9 /* AppDelegate.swift in Sources */,
+				E71276901A6073BF00371CE5 /* ReplayViewController.swift in Sources */,
 				E7BBAFF71A4A175100049F08 /* HighScoresViewController.swift in Sources */,
 				E7BBAFF51A4A173E00049F08 /* HowToPlayViewController.swift in Sources */,
 				E7BBAFF31A4A172D00049F08 /* NewGameViewController.swift in Sources */,

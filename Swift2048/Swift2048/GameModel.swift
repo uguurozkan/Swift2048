@@ -44,17 +44,17 @@ class GameModel {
   var gameState = GameState.InProgress
   var board: [[TileObject]]
   var replayQueueMoves = [Direction]()
-  var replayQueueRandoms = [TileObject]()
-  // TODO implement score mechanism later.
+  var replayQueueRandoms = [(Int, Int, TileObject)]()
   
-  
-  init(maxValue: Int) {
+  init(maxValue: Int, isReplay: Bool) {
     self.maxValue = maxValue
-
+    
     let boardRow = [TileObject](count: dimension, repeatedValue: .Empty)
     board = [[TileObject]] (count: dimension, repeatedValue: boardRow)
 
-    addRandomTile()
+    if !isReplay{
+      addRandomTile()
+    }
   }
   
   func move(direction: Direction){
@@ -272,10 +272,22 @@ class GameModel {
       row = Int(arc4random_uniform(4))
       col = Int(arc4random_uniform(4))
     } while(!isAvailable(row, col: col))
-    var newTile = TileObject.Tile(value: 2, isMerged: false)
-    board[row][col] = newTile
     
-    replayQueueRandoms.append(newTile)
+    var value: Int
+    if Int(arc4random_uniform(100)) < 30 {
+      value = 4
+    } else {
+      value = 2
+    }
+    
+    var newTile = TileObject.Tile(value: value, isMerged: false)
+    insertTile(row, col, newTile)
+    
+    replayQueueRandoms.append((row, col, newTile))
+  }
+  
+  func insertTile(row: Int, _ col: Int, _ newTile: TileObject) {
+    board[row][col] = newTile
   }
   
   func isAvailable(row: Int, col: Int) -> Bool{
@@ -372,4 +384,14 @@ class GameModel {
     }
   }
 
+  // TODO Change logic
+  func getScore() -> Int {
+    var score = 0
+    for var row = 0; row < board.count; row++ {
+      for var col = 0; col < board[row].count; col++ {
+        score += board[row][col].getValue()
+      }
+    }
+    return score
+  }
 }
