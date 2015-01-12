@@ -14,6 +14,9 @@ class NewGameViewController: UIViewController {
   var scores: [Int]!
   
   func refreshUI() {
+    // NOT tested. Added on github. If it causes problems simply delete it.
+    updateTiles()
+    
     if !gameModel.isBoardFull() {
       gameModel.addRandomTile()
     }
