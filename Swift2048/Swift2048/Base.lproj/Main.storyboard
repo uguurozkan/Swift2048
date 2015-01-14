@@ -20,6 +20,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rZ-ic-kD6">
                                 <rect key="frame" x="80" y="120" width="160" height="240"/>
                                 <subviews>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lau-dn-P5c">
+                                        <rect key="frame" x="0.0" y="99" width="160" height="30"/>
+                                        <color key="backgroundColor" red="0.63921570777893066" green="0.57647061347961426" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="How to Play">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="dFL-gu-kpR" kind="presentation" identifier="HowToPlay" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="5sH-82-FdO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lei-Cs-qpU">
+                                        <rect key="frame" x="0.0" y="190" width="160" height="30"/>
+                                        <color key="backgroundColor" red="0.63921570777893066" green="0.57647061347961426" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="About">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="W5s-P8-ZlV" kind="presentation" identifier="About" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="DMd-dU-aML"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jg8-pc-Bhi">
                                         <rect key="frame" x="0.0" y="48" width="160" height="30"/>
                                         <color key="backgroundColor" red="0.63921570777893066" green="0.57647061347961426" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
@@ -30,6 +54,18 @@
                                             <segue destination="Pm8-RN-K6B" kind="presentation" identifier="NewGame" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="Bb5-kh-haK"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJW-8j-fAO">
+                                        <rect key="frame" x="0.0" y="145" width="160" height="30"/>
+                                        <color key="backgroundColor" red="0.63921570777893066" green="0.57647061347961426" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="High Scores">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="eBL-ow-649" kind="presentation" identifier="HighScores" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="o4A-I3-ehj"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.9882352941176471" blue="0.88235294117647056" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
@@ -37,42 +73,6 @@
                                     <constraint firstAttribute="height" constant="240" id="ZCz-CS-oQF"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJW-8j-fAO">
-                                <rect key="frame" x="80" y="206" width="160" height="30"/>
-                                <color key="backgroundColor" red="0.63921570777893066" green="0.57647061347961426" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="High Scores">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="eBL-ow-649" kind="presentation" identifier="HighScores" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="o4A-I3-ehj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lau-dn-P5c">
-                                <rect key="frame" x="80" y="244" width="160" height="30"/>
-                                <color key="backgroundColor" red="0.63921570777893066" green="0.57647061347961426" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="How to Play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dFL-gu-kpR" kind="presentation" identifier="HowToPlay" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="5sH-82-FdO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lei-Cs-qpU">
-                                <rect key="frame" x="80" y="282" width="160" height="30"/>
-                                <color key="backgroundColor" red="0.63921570777893066" green="0.57647061347961426" blue="0.5058823823928833" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="About">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="W5s-P8-ZlV" kind="presentation" identifier="About" modalPresentationStyle="fullScreen" modalTransitionStyle="partialCurl" id="DMd-dU-aML"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.9882352941176471" blue="0.88235294117647056" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>

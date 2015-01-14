@@ -10,10 +10,11 @@ import UIKit
 
 class NewGameViewController: UIViewController {
   
-  var gameModel = GameModel(maxValue: 2048, isReplay: false)
+  var gameModel = GameModel(maxValue: 32, isReplay: false)
   var scores: [Int]!
   
   func refreshUI() {
+    
     if !gameModel.isBoardFull() {
       gameModel.addRandomTile()
     }
